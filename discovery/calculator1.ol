@@ -1,5 +1,6 @@
 include "calculator_iface.iol"
 include "console.iol"
+include "registry.iol"
 
 execution { concurrent }
 
@@ -7,6 +8,13 @@ inputPort CalcInput {
 Location: "socket://localhost:8001/"
 Protocol: sodep
 Interfaces: CalculatorIface
+}
+
+init
+{
+  r.serviceType = "Calculator";
+  r.binding << global.inputPorts.CalcInput;
+  register@Registry( r )()
 }
 
 define printServed
