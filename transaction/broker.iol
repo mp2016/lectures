@@ -1,15 +1,33 @@
 type GetPriceRequest: void {
   .product:string
   .seller:string
+  .sid:string
 }
 
 type BuyRequest: void {
   .product:string
   .seller:string
+  .sid:string
+}
+
+type LoginRequest:void {
+  .username:string
+  .pwd:string
+}
+
+type LogoutRequest:void {
+  .sid:string
 }
 
 interface BrokerIface {
+OneWay:
+  logout(LogoutRequest)
+
 RequestResponse:
+  // Logs the client in
+  login(LoginRequest)(string)
+    throws InvalidPassword(void),
+
   // Gets the price of a product
   getPrice(GetPriceRequest)(int)
     throws ProductNotFound(void)
