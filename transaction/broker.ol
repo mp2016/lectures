@@ -12,13 +12,15 @@ Interfaces: BrokerIface
 
 cset {
 sid: GetPriceRequest.sid BuyRequest.sid
-     LogoutRequest.sid
+     SimpleSessionRequest.sid
 }
 
 init {
   global.users << {
     .John = "secret",
-    .Alice = "blah"
+    .John.isAdmin = false,
+    .Alice = "blah",
+    .Alice.isAdmin = true
   }
 }
 
@@ -38,10 +40,10 @@ define checkSid
 
 main
 {
-  login( request )( csets.sid ) {
+  [ login( request )( csets.sid ) {
     checkPwd;
     csets.sid = new
-  };
+  } ] {
   {
   provide
     [ getPrice( request )( price ) {
@@ -61,4 +63,20 @@ main
     }
   };
   println@Console( "Terminated for sid " + csets.sid )()
+  }
+
+  [ getName()( "DanskeMægler" ) ]
+
+  [ loginAdmin( request )( csets.sid ) {
+    checkPwd;
+    if ( !global.users.(request.username).isAdmin ) {
+      throw( InsufficientPermissions )
+    };
+    csets.sid = new
+  } ] {
+    [ shutdown() ] {
+      exit
+    }
+    [ logout() ]
+  }
 }

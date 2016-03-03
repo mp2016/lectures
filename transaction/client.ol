@@ -11,6 +11,8 @@ main
       .username = args[2],
       .pwd = args[3]
     } )( sid );
+    getName@Broker()( name );
+    println@Console( name )();
     getPrice@Broker( {
       .product = args[0],
       .seller = args[1],
@@ -24,5 +26,10 @@ main
     } )( price );
     println@Console( price )();
     logout@Broker( { .sid = sid } )
-  }
+  };
+  loginAdmin@Broker( {
+    .username = args[2],
+    .pwd = args[3]
+  } )( sid );
+  shutdown@Broker( { .sid = sid } )
 }

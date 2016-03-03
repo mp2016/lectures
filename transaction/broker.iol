@@ -15,18 +15,27 @@ type LoginRequest:void {
   .pwd:string
 }
 
-type LogoutRequest:void {
+type SimpleSessionRequest:void {
   .sid:string
 }
 
 interface BrokerIface {
 OneWay:
-  logout(LogoutRequest)
+  logout(SimpleSessionRequest),
+  shutdown(SimpleSessionRequest)
 
 RequestResponse:
+  // Gets the name of the broker
+  getName(void)(string),
+
   // Logs the client in
   login(LoginRequest)(string)
     throws InvalidPassword(void),
+
+  // Logs an admin in
+  loginAdmin(LoginRequest)(string)
+    throws InvalidPassword(void)
+           InsufficientPermissions(void),
 
   // Gets the price of a product
   getPrice(GetPriceRequest)(int)
