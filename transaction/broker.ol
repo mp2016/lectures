@@ -58,9 +58,7 @@ main
       nullProcess
     } ]
   until
-    [ logout() ] {
-      keeprun = false
-    }
+    [ logout() ]
   };
   println@Console( "Terminated for sid " + csets.sid )()
   }

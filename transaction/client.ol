@@ -13,6 +13,7 @@ main
     } )( sid );
     getName@Broker()( name );
     println@Console( name )();
+
     getPrice@Broker( {
       .product = args[0],
       .seller = args[1],
