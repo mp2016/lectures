@@ -2,6 +2,7 @@ include "calculator_iface.iol"
 include "console.iol"
 include "ui/swing_ui.iol"
 include "load_balancer_iface.iol"
+include "time.iol"
 
 outputPort Calculator {
 Location: Location_LoadBalancer
@@ -24,6 +25,7 @@ main
       .sid = sid
     } )( result )
   };
+  sleep@Time( 1000 )();
   logout@Calculator( { .sid = sid } )();
   println@Console( total + result )()
 }

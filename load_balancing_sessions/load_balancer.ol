@@ -48,16 +48,31 @@ courier LoadBalancerInput {
     synchronized( Mutex ) {
       Calculator << global.sessions.(request.sid)
     };
-    forward Calculator( request )( response );
-    synchronized( Mutex ) {
-      undef( global.sessions.(request.sid) )
+    scope( s ) {
+      install( IOException =>
+        synchronized( Mutex ) {
+          undef( global.sessions.(request.sid) )
+        };
+        throw( IOException )
+      );
+      forward Calculator( request )( response );
+      synchronized( Mutex ) {
+        undef( global.sessions.(request.sid) )
+      }
     }
   }
 
   [ interface CalculatorIface( request )( response ) ] {
-    // selectCalculator;
     Calculator << global.sessions.(request.sid);
-    forward Calculator( request )( response )
+    scope( s ) {
+      install( IOException =>
+        synchronized( Mutex ) {
+          undef( global.sessions.(request.sid) )
+        };
+        throw( IOException )
+      );
+      forward Calculator( request )( response )
+    }
   }
 }
 
