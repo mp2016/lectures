@@ -6,6 +6,10 @@
 - [http://cs.unibo.it/~sgiallor/ideas/](http://cs.unibo.it/~sgiallor/ideas/)
 - [http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf](http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf)
 
+### Fault handling
+
+Make a survey/comparison of error handling constructs and policies in different languages/frameworks.
+
 ### Choreographies
 
 Use choreographies to compile safe implementations, e.g., see [http://arxiv.org/pdf/1602.08863v1.pdf](http://arxiv.org/pdf/1602.08863v1.pdf).
