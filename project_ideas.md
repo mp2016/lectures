@@ -6,6 +6,10 @@
 - [http://cs.unibo.it/~sgiallor/ideas/](http://cs.unibo.it/~sgiallor/ideas/)
 - [http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf](http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf)
 
+### REST Jolie
+
+Make a standard Jolie REST server building on the ideas in: [http://fabriziomontesi.com/files/jolie_web_draft.pdf](http://fabriziomontesi.com/files/jolie_web_draft.pdf).
+
 ### Fault handling
 
 Make a survey/comparison of error handling constructs and policies in different languages/frameworks.
