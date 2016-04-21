@@ -6,6 +6,22 @@
 - [http://cs.unibo.it/~sgiallor/ideas/](http://cs.unibo.it/~sgiallor/ideas/)
 - [http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf](http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf)
 
+### Jolie Yellow Pages
+
+Make a service (and a website?) for keeping track of services that can be used on the Internet, providing interfaces and output ports.
+
+### Jolie Public Service Repository
+
+Step 1: Implement a service repository that makes it possible to include with a one-liner the interfaces and output ports to useful external services, e.g., GitHub.
+
+Step 2: Make it possible to run Jolie services in the repository, to implement more complex behaviours.
+
+### Standard Leonardo
+
+Whenever Leonardo is used, we may have to change its code to work with some advanced configurations, such as forwarding messages to other microservices. This means that if a new version of Leonardo comes out, we need to manually update our code.
+
+Investigate how to avoid this problem by making Leonardo support a more powerful configuration system.
+
 ### REST Jolie
 
 Make a standard Jolie REST server building on the ideas in: [http://fabriziomontesi.com/files/jolie_web_draft.pdf](http://fabriziomontesi.com/files/jolie_web_draft.pdf).
