@@ -6,6 +6,12 @@
 - [http://cs.unibo.it/~sgiallor/ideas/](http://cs.unibo.it/~sgiallor/ideas/)
 - [http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf](http://fabriziomontesi.com/files/fmontesi-thesis-proposals.pdf)
 
+### JavaScript integration
+
+Jolie already supports integration with JavaScript, but does not support useful functions for handling
+modules such as require and module.exports found in node.js. Implement
+these functions to allow for modular JavaScript code in Jolie.
+
 ### Jolie Yellow Pages
 
 Make a service (and a website?) for keeping track of services that can be used on the Internet, providing interfaces and output ports.
