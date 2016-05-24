@@ -1,0 +1,1 @@
+jar cvfm calc.jap manifest.mf -C calculator/ .
