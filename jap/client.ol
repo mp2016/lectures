@@ -1,4 +1,5 @@
-include "jap:file:calc.jap!/calculator_iface.iol"
+// include "jap:file:calc.jap!/calculator_iface.iol"
+include "jap:http://www.fabriziomontesi.com/calc.jap!/calculator_iface.iol"
 include "console.iol"
 
 outputPort Calculator {
