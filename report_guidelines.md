@@ -4,7 +4,7 @@
 
 You have to hand in a single zip file on Blackboard, containing:
 
-- a PDF file with your report (call it "<your_name>-report-mp2016.pdf", where <your_name> should be
+- a PDF file with your report (call it "$your-name-report-mp2016.pdf", where $your-name should be
 replaced by your name);
 - a subdirectory named "code" containing the source code for your project.
 
